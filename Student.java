@@ -9,7 +9,7 @@ public class Student implements manage{
     private String phoneNumber;
     private String email;
     private list<Course> courses ;
-    private list<attendance> attendance;
+    private list<Attendance> attendance;
     private static int totalStudents = 0;
 
     // Constructor for registration
