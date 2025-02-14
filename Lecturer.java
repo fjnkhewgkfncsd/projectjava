@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
-public class Lecturer {
-    private static int totalLecturers = 0;  // Static variable to track total number of lecturers
+public class Lecturer implements manage {
+    private static int totalLecturers = 0;  
     private int id;
     private String name;
     private String gender;
@@ -23,14 +23,13 @@ public class Lecturer {
         this.specialization = specialization;
         this.salary = salary;
         totalLecturers++;  
+        lecturerList.add(this);  // Automatically add lecturer to list
     }
 
-    // Static method to get the total number of lecturers
     public static int getTotalLecturers() {
         return totalLecturers;
     }
 
-    // Getters for instance variables
     public int getId() {
         return id;
     }
@@ -63,17 +62,15 @@ public class Lecturer {
         return salary;
     }
 
-    // Method to add a lecturer to the ArrayList
     public static void addLecturer(Lecturer lecturer) {
         lecturerList.add(lecturer);
     }
 
-    // Method to remove a lecturer from the ArrayList by ID
     public static void removeLecturerById(int id) {
-        lecturerList.removeIf(lecturer -> lecturer.getId() == id);
+        boolean removed = lecturerList.removeIf(lecturer -> lecturer.getId() == id);
+        if (removed) totalLecturers--;  
     }
 
-    // Method to get a lecturer by ID
     public static Lecturer getLecturerById(int id) {
         for (Lecturer lecturer : lecturerList) {
             if (lecturer.getId() == id) {
@@ -83,24 +80,37 @@ public class Lecturer {
         return null; 
     }
 
-    // Method to display all lecturers with all attributes
     public static void displayAllLecturers() {
         for (Lecturer lecturer : lecturerList) {
-            System.out.println(
-                "ID: " + lecturer.getId() + ", " + 
-                "Name: " + lecturer.getName() + ", " +
-                "Gender: " + lecturer.getGender() + ", " +
-                "Email: " + lecturer.getEmail() + ", " +
-                "Address: " + lecturer.getAddress() + ", " +
-                "Phone Number: " + lecturer.getPhoneNum() + ", " +
-                "Specialization: " + lecturer.getSpecialization() + ", " +
-                "Salary: " + lecturer.getSalary()
-            );
+            System.out.println(lecturer);
         }
     }
 
-    // Method to get the list of all lecturers
     public static ArrayList<Lecturer> getLecturerList() {
         return lecturerList;
     }
+
+    @Override
+    public String toString() {
+        return "ID: " + id +
+               ", Name: " + name +
+               ", Gender: " + gender +
+               ", Email: " + email +
+               ", Address: " + address +
+               ", Phone Number: " + phone_num +
+               ", Specialization: " + specialization +
+               ", Salary: " + salary;
+    }
+    @Override
+        public boolean login(String username,String password){
+            return true;
+        }
+        public boolean signup(String name,String password,String phonenumber,char sex,String dob,String email){
+            return true;
+        }
+        public void checkAttendent(String username,String password){
+            return;
+        }
+
 }
+

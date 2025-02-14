@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Course {
-    private static int totalCourses = 0;  // Static variable to keep track of total courses
+    private static int totalCourses = 0;
     private String courseCode;
     private String courseName;
     private int creditHours;
@@ -9,10 +9,8 @@ public class Course {
     private String schedule;
     private String classroom;
 
-    // Static ArrayList to store Course objects
     private static ArrayList<Course> courseList = new ArrayList<>();
 
-    // Constructor with all attributes
     public Course(String courseCode, String courseName, int creditHours, Lecturer lecturer, String schedule, String classroom) {
         this.courseCode = courseCode;
         this.courseName = courseName;
@@ -20,15 +18,14 @@ public class Course {
         this.lecturer = lecturer;
         this.schedule = schedule;
         this.classroom = classroom;
-        totalCourses++;  // Increment total courses every time a new course is created
+        totalCourses++;
+        courseList.add(this);  // Automatically add to the course list
     }
 
-    // Static method to get total courses
     public static int getTotalCourses() {
         return totalCourses;
     }
 
-    // Getters for instance variables
     public String getCourseCode() {
         return courseCode;
     }
@@ -53,42 +50,37 @@ public class Course {
         return classroom;
     }
 
-    // Method to add a course to the ArrayList
-    public static void addCourse(Course course) {
-        courseList.add(course);
-    }
-
-    // Method to remove a course by course code
     public static void removeCourseByCode(String courseCode) {
-        courseList.removeIf(course -> course.getCourseCode().equals(courseCode));
+        boolean removed = courseList.removeIf(course -> course.getCourseCode().equals(courseCode));
+        if (removed) totalCourses--;  // Decrement total courses if a course is removed
     }
 
-    // Method to get a course by course code
     public static Course getCourseByCode(String courseCode) {
         for (Course course : courseList) {
             if (course.getCourseCode().equals(courseCode)) {
                 return course;
             }
         }
-        return null;  
+        return null;
     }
 
-    // Method to display all courses with all attributes
     public static void displayAllCourses() {
         for (Course course : courseList) {
-            System.out.println(
-                "Course Code: " + course.getCourseCode() + ", " +
-                "Course Name: " + course.getCourseName() + ", " +
-                "Credit Hours: " + course.getCreditHours() + ", " +
-                "Lecturer: " + course.getLecturer().getName() + ", " +
-                "Schedule: " + course.getSchedule() + ", " +
-                "Classroom: " + course.getClassroom()
-            );
+            System.out.println(course);
         }
     }
 
-    // Method to get the list of all courses
     public static ArrayList<Course> getCourseList() {
         return courseList;
+    }
+
+    @Override
+    public String toString() {
+        return "Course Code: " + courseCode +
+               ", Course Name: " + courseName +
+               ", Credit Hours: " + creditHours +
+               ", Lecturer: " + (lecturer != null ? lecturer.getName() : "N/A") +
+               ", Schedule: " + schedule +
+               ", Classroom: " + classroom;
     }
 }
