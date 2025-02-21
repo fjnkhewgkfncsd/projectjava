@@ -1,4 +1,5 @@
 import java.util.ArrayList; 
+import java.util.List;
 public class Student implements manage{
     private String name;
     private static int nextId= 0;
@@ -8,8 +9,13 @@ public class Student implements manage{
     private char gender;
     private String phoneNumber;
     private String email;
+<<<<<<< HEAD
     private list<Course> courses ;
     private list<Attendance> attendance;
+=======
+    private List<Course> courses;
+    private List<StudentAttendance> attendance;
+>>>>>>> origin/main
     private static int totalStudents = 0;
 
     // Constructor for registration
@@ -39,7 +45,12 @@ public class Student implements manage{
     public boolean signup(String name,String password,String phonenumber,char sex,String dob,String email){
         return true;
     }
-
+    public void submitAttendent(String username,String password){
+        return;
+    }
+    public void checkAttendent(String username,String password){
+        return;
+    }
     // Getters (Allow reading values)
     public String getName() { return name; }
     public int getId() { return id; }

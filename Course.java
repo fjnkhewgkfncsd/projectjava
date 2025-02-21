@@ -73,6 +73,7 @@ public class Course {
     public static ArrayList<Course> getCourseList() {
         return courseList;
     }
+<<<<<<< HEAD
 
     @Override
     public String toString() {
@@ -83,4 +84,6 @@ public class Course {
                ", Schedule: " + schedule +
                ", Classroom: " + classroom;
     }
+=======
+>>>>>>> origin/main
 }

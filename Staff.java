@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 import java.util.ArrayList;
 
 public class Staff {
+=======
+public class Staff implements manage{
+>>>>>>> origin/main
     private int staffId;
     String firstName;
     String lastName;
@@ -62,4 +66,21 @@ public class Staff {
                 ", salary= $" + salary +
                 '}';
     }
+    @Override
+    public boolean login(String email, String password) {
+        if(this.email.equals(email) && this.password.equals(password)){
+            return true;
+        }
+        return false;
+    }
+    public boolean signup(String name,String password,String phonenumber,char sex,String dob,String email){
+        return true;
+    }
+    public void submitAttendent(String username,String password){
+        return;
+    }
+    public void checkAttendent(String username,String password){
+        return;
+    }
+    
 }

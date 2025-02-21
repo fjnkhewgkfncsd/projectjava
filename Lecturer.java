@@ -1,7 +1,12 @@
 import java.util.ArrayList;
 
+<<<<<<< HEAD
 public class Lecturer implements manage {
     private static int totalLecturers = 0;  
+=======
+public class Lecturer implements manage{
+    private static int totalLecturers = 0;  // Static variable to track total number of lecturers
+>>>>>>> origin/main
     private int id;
     private String name;
     private String gender;
@@ -10,7 +15,7 @@ public class Lecturer implements manage {
     private String phone_num;
     private String specialization;
     private double salary;
-
+    private ArrayList<Attendance> attendance;
     private static ArrayList<Lecturer> lecturerList = new ArrayList<>();
 
     public Lecturer(int id, String name, String gender, String email, String address, String phone_num, String specialization, double salary) {
@@ -89,6 +94,7 @@ public class Lecturer implements manage {
     public static ArrayList<Lecturer> getLecturerList() {
         return lecturerList;
     }
+<<<<<<< HEAD
 
     @Override
     public String toString() {
@@ -114,3 +120,21 @@ public class Lecturer implements manage {
 
 }
 
+=======
+    public boolean login(String email, String password) {
+        if(this.email.equals(email) && this.password.equals(password)){
+            return true;
+        }
+        return false;
+    }
+    public boolean signup(String name,String password,String phonenumber,char sex,String dob,String email){
+        return true;
+    }
+    public void submitAttendent(String username,String password){
+        return;
+    }
+    public void checkAttendent(String username,String password){
+        return;
+    }
+}
+>>>>>>> origin/main
