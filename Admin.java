@@ -29,10 +29,13 @@ public class Admin implements manage{
     public boolean signup(String name,String password,String phonenumber,char sex,String dob,String email){
         return true;
     }
+<<<<<<< Updated upstream
     public void submitAttendent(String username,String password){
         return;
     }
     public void checkAttendent(String username,String password){
         return;
     }
+=======
+>>>>>>> Stashed changes
 }

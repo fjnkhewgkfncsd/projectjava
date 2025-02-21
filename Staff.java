@@ -1,13 +1,17 @@
 <<<<<<< HEAD
 import java.util.ArrayList;
+<<<<<<< Updated upstream
 
 public class Staff {
 =======
 public class Staff implements manage{
 >>>>>>> origin/main
+=======
+import java.util.List;
+public class Staff implements manage{
+>>>>>>> Stashed changes
     private int staffId;
-    String firstName;
-    String lastName;
+    String name;
     String position;
     String gender;
     String dateOfBirth;  
@@ -15,18 +19,18 @@ public class Staff implements manage{
     String email;
     private String password;
     String hireDate;
-    String EndDate;
+    String endDate;
     private double salary;
+    private List<Attendance> attendanceList;
 
     static int totalStaffCount = 0;
     static ArrayList<Staff> staffList = new ArrayList<>();
 
-    public Staff(String firstName, String lastName, String dateOfBirth, String gender, 
+    public Staff(String name, String dateOfBirth, String gender, 
                  String position, String phoneNumber, String email, String password, 
-                 String hireDate, String EndDate, double salary) {
+                 String hireDate, String endDate, double salary) {
         this.staffId = ++totalStaffCount;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
         this.position = position;
@@ -34,14 +38,9 @@ public class Staff implements manage{
         this.email = email;
         this.password = password;
         this.hireDate = hireDate;
-        this.EndDate = EndDate;
+        this.endDate = endDate;
         this.salary = salary;
         staffList.add(this);
-    }
-
-    public Staff(String email, String password) {
-        this.email = email;
-        this.password = password;
     }
 
     public int getStaffId() { 
@@ -51,13 +50,14 @@ public class Staff implements manage{
     public static ArrayList<Staff> getStaffList() {
         return staffList;
     }
-
+    public List<Attendance> getattendanceList() {
+        return attendanceList;
+    }
     @Override
     public String toString() {
         return "Staff{" +
                 "staffId=" + staffId +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
+                ", firstName='" + name + '\'' +
                 ", position='" + position + '\'' +
                 ", gender='" + gender + '\'' +
                 ", dateOfBirth='" + dateOfBirth + '\'' +
@@ -66,6 +66,7 @@ public class Staff implements manage{
                 ", salary= $" + salary +
                 '}';
     }
+<<<<<<< Updated upstream
     @Override
     public boolean login(String email, String password) {
         if(this.email.equals(email) && this.password.equals(password)){
@@ -83,4 +84,12 @@ public class Staff implements manage{
         return;
     }
     
+=======
+    public boolean signup(String name,String password,String phonenumber,char sex,String dob,String email){
+        return true;
+    }
+    public boolean login(String email, String password) {
+        return this.email.equals(email) && this.password.equals(password);
+    }
+>>>>>>> Stashed changes
 }

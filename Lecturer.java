@@ -1,9 +1,12 @@
 import java.util.ArrayList;
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 public class Lecturer implements manage {
     private static int totalLecturers = 0;  
 =======
+=======
+>>>>>>> Stashed changes
 public class Lecturer implements manage{
     private static int totalLecturers = 0;  // Static variable to track total number of lecturers
 >>>>>>> origin/main
@@ -94,6 +97,7 @@ public class Lecturer implements manage{
     public static ArrayList<Lecturer> getLecturerList() {
         return lecturerList;
     }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 
     @Override
@@ -121,6 +125,8 @@ public class Lecturer implements manage{
 }
 
 =======
+=======
+>>>>>>> Stashed changes
     public boolean login(String email, String password) {
         if(this.email.equals(email) && this.password.equals(password)){
             return true;
@@ -137,4 +143,7 @@ public class Lecturer implements manage{
         return;
     }
 }
+<<<<<<< Updated upstream
 >>>>>>> origin/main
+=======
+>>>>>>> Stashed changes

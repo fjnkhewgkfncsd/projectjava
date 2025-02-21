@@ -73,6 +73,7 @@ public class Course {
     public static ArrayList<Course> getCourseList() {
         return courseList;
     }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 
     @Override
@@ -86,4 +87,6 @@ public class Course {
     }
 =======
 >>>>>>> origin/main
+=======
+>>>>>>> Stashed changes
 }
